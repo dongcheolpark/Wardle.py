@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dafafae3-4751-44e9-9e36-310947e9e616" name="변경" comment="&lt;수정&gt; 파일 이름 변경">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="dafafae3-4751-44e9-9e36-310947e9e616" name="변경" comment="&lt;제거&gt; .DS_Store 제거">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +16,13 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="mster" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,6 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645711235552</updated>
       <workItem from="1645711237801" duration="1163000" />
+      <workItem from="1645712719650" duration="607000" />
     </task>
     <task id="LOCAL-00001" summary="&lt;수정&gt; 파일 이름 변경">
       <created>1645711596713</created>
@@ -81,7 +88,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
