@@ -6,10 +6,10 @@ import wordle_py as wd
 class TestCaseStart(unittest.TestCase):
 
     def setUp(self):
-        self.wardle = wd.wardle.WordleOriginal()
+        self.wordle = wd.wordle.WordleOriginal()
 
     def test_is_same_zero(self):
-        self.assertEqual(self.wardle.get_answerString().toString(), '')
+        self.assertEqual(self.wordle.get_answerString().toString(), '')
 
     def tearDown(self):
-        del self.wardle
+        del self.wordle
