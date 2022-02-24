@@ -1,7 +1,7 @@
-from wardle_py.models import *
+from wordle_py.models import *
 
 
-class Wardle:
+class Wordle:
 
     def __init__(self):
         self.answer_String = AnswerString()
@@ -10,7 +10,7 @@ class Wardle:
         return self.answer_String
 
 
-class WardleOriginal(Wardle):
+class WordleOriginal(Wordle):
 
     def __init__(self):
         self.answer_String = AnswerStringEnglish()

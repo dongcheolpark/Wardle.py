@@ -1,6 +1,6 @@
 import unittest
 
-import wardle_py.models as models
+import wordle_py.models as models
 
 
 class TestCaseStart(unittest.TestCase):

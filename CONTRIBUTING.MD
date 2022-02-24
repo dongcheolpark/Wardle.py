@@ -4,8 +4,8 @@
 먼저 프로젝트 디렉토리를 만들어 주시고 프로젝트를 fork 해주신 다음
 ```shell
 $ git init
-$ git remote add upstream https://github.com/dongcheolpark/Wardle.py.git
-$ git remote add origin https://github.com/{your-personal-repo}/Wardle.py.git
+$ git remote add upstream https://github.com/dongcheolpark/Wordle.py.git
+$ git remote add origin https://github.com/{your-personal-repo}/Wordle.py.git
 ```
 필요하시다면 가상환경 설정해주신 후
 ```shell
