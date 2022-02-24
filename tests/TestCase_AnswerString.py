@@ -6,6 +6,6 @@ import wardle_py.models as models
 class TestCaseStart(unittest.TestCase):
 
     def test_AnswerStringToString(self):
-        answer_string = models.AnswerString("react");
-        self.assertEqual(answer_string.toString() , "react")
+        answer_string = models.AnswerStringEnglish("react");
+        self.assertEqual("react", answer_string.toString())
 
