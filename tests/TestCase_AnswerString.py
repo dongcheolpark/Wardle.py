@@ -9,7 +9,7 @@ class TestCaseStart(unittest.TestCase):
         answer_string = models.AnswerStringEnglish("react")
         self.assertEqual("react", answer_string.toString())
 
-    def test_AnswerStringIsSame(self):
+    def test_AnswerStringIsSame1(self):
         answer_string = models.AnswerStringEnglish("react")
         supposition_string = models.AnswerStringEnglish("roast")
         res = answer_string.CheckString(supposition_string)
@@ -19,7 +19,7 @@ class TestCaseStart(unittest.TestCase):
         self.assertEqual(res[3], 0)
         self.assertEqual(res[4], 2)
 
-    def test_AnswerStringIsSame(self):
+    def test_AnswerStringIsSame2(self):
         answer_string = models.AnswerStringEnglish("react")
         supposition_string = models.AnswerStringEnglish("rcast")
         res = answer_string.CheckString(supposition_string)
