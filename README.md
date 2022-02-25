@@ -1,4 +1,7 @@
-<h1> Wordle.py <a href="https://github.com/dongcheolpark/Wardle.py/blob/master/LICENSE"> <img src="https://img.shields.io/badge/license-MIT-4aaa4a"></a></h1>
+<h1> Wordle.py</h1>
+<a href="https://github.com/dongcheolpark/Wardle.py/blob/master/LICENSE"> <img src="https://img.shields.io/badge/license-MIT-4aaa4a"></a>
+
+[![codecov](https://codecov.io/gh/dongcheolpark/Wordle.py/branch/master/graph/badge.svg?token=3N0GT29BGK)](https://codecov.io/gh/dongcheolpark/Wordle.py)
 
 ## 프로젝트 설명
 
