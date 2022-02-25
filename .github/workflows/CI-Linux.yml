@@ -28,7 +28,10 @@ jobs:
           pip install -r requirements.txt
       - name: Test with unittest
         run: |
-          coverage python -m unittest discover -s tests -p 'Test*.py'
+          python -m unittest discover -s tests -p 'Test*.py'
+      - name: coverage report
+        run: |
+          coverage run -m unittest discover -s tests -p 'Test*.py'
           coverage html
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
