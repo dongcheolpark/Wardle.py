@@ -11,5 +11,5 @@
 ## 개발환경 설정
 
 ## 기여 방법
-언제든 PR 보내주세요! 자세한 내용은 [CONTRIBUTING.MD](https://github.com/dongcheolpark/Wardle.py/blob/master/CONTRIBUTING.md) 확인해주세요!
+언제든 PR 보내주세요! 자세한 내용은 [CONTRIBUTING.MD](https://github.com/dongcheolpark/Wardle.py/blob/master/CONTRIBUTING.MD) 확인해주세요!
 
