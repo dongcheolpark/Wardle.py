@@ -130,7 +130,6 @@ dmypy.json
 
 # IDE Files
 .vscode
-.idea/workspace.xml
 
 # Mac Files
 .DS_Store
