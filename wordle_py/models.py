@@ -16,13 +16,17 @@ class AnswerString:
         return
 
     def CheckString(self, string):
-        res = [2, 0, 2, 0, 2]
+        res = []
         _text = string.getTextList()
         for i in range(len(_text)):
-            if _text[i] == self.text[i]:
-                res[i] = 2;
-            else:
-                res[i] = 0;
+            res.append(0)
+            for j in range(len(_text)):
+                if _text[i] == self.text[j]:
+                    if i == j:
+                        res[i] = 2
+                        break
+                    else:
+                        res[i] = 1
         return res
 
 
