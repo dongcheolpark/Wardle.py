@@ -39,6 +39,4 @@ class TestCaseAnswerString(unittest.TestCase):
             res = answer_string.CheckString(supposition_string)
         except Exception as e:
             self.assertEqual('Each string is not the same size.', e.__str__())
-        else:
-            raise
 
