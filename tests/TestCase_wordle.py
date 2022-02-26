@@ -10,7 +10,7 @@ class TestCaseWordle(unittest.TestCase):
         self.wordle = wd.wordle.WordleOriginal()
         self.wordle.setAnswer("roast")
 
-    def Test_CheckTurn(self):
+    def test_CheckTurn(self):
         i = 0
         answer = md.AnswerStringEnglish('hello')
         while self.wordle.getTurn():
