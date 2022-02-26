@@ -21,3 +21,14 @@ class TestCaseStart(unittest.TestCase):
         res = answer_string.CheckString(supposition_string)
         self.assertEqual(res, [2, 1, 2, 0, 2])
 
+    def test_AnswerStringIsSame3(self):
+        answer_string = models.AnswerStringEnglish("reaction")
+        supposition_string = models.AnswerStringEnglish("acentric")
+        res = answer_string.CheckString(supposition_string)
+        self.assertEqual(res, [1, 1, 1, 1, 2, 1, 1, 1])
+
+    def test_AnswerStringIsSame5(self):
+        answer_string = models.AnswerStringEnglish("abcdefg")
+        supposition_string = models.AnswerStringEnglish("hijklmn")
+        res = answer_string.CheckString(supposition_string)
+        self.assertEqual(res, [0, 0, 0, 0, 0, 0, 0])
