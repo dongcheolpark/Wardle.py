@@ -8,9 +8,26 @@ class AnswerString:
         self.text = []
         return
 
+    def getTextList(self):
+        return self.text
+
     @abstractmethod
     def toString(self):
         return
+
+    def CheckString(self, string):
+        res = []
+        _text = string.getTextList()
+        for i in range(len(_text)):
+            res.append(0)
+            for j in range(len(_text)):
+                if _text[i] == self.text[j]:
+                    if i == j:
+                        res[i] = 2
+                        break
+                    else:
+                        res[i] = 1
+        return res
 
 
 class AnswerStringEnglish(AnswerString):
