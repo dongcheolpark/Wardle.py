@@ -3,7 +3,7 @@ import unittest
 import wordle_py.models as models
 
 
-class TestCaseStart(unittest.TestCase):
+class TestCaseAnswerString(unittest.TestCase):
 
     def test_AnswerStringToString(self):
         answer_string = models.AnswerStringEnglish("react")
@@ -13,22 +13,30 @@ class TestCaseStart(unittest.TestCase):
         answer_string = models.AnswerStringEnglish("react")
         supposition_string = models.AnswerStringEnglish("roast")
         res = answer_string.CheckString(supposition_string)
-        self.assertEqual(res, [2, 0, 2, 0, 2])
+        self.assertListEqual(res, [2, 0, 2, 0, 2])
 
     def test_AnswerStringIsSame2(self):
         answer_string = models.AnswerStringEnglish("react")
         supposition_string = models.AnswerStringEnglish("rcast")
         res = answer_string.CheckString(supposition_string)
-        self.assertEqual(res, [2, 1, 2, 0, 2])
+        self.assertListEqual(res, [2, 1, 2, 0, 2])
 
     def test_AnswerStringIsSame3(self):
         answer_string = models.AnswerStringEnglish("reaction")
         supposition_string = models.AnswerStringEnglish("acentric")
         res = answer_string.CheckString(supposition_string)
-        self.assertEqual(res, [1, 1, 1, 1, 2, 1, 1, 1])
+        self.assertListEqual(res, [1, 1, 1, 1, 2, 1, 1, 1])
 
     def test_AnswerStringIsSame5(self):
         answer_string = models.AnswerStringEnglish("abcdefg")
         supposition_string = models.AnswerStringEnglish("hijklmn")
         res = answer_string.CheckString(supposition_string)
-        self.assertEqual(res, [0, 0, 0, 0, 0, 0, 0])
+        self.assertListEqual(res, [0, 0, 0, 0, 0, 0, 0])
+    def test_AnswerStringSizeIsDifferent(self):
+        answer_string = models.AnswerStringEnglish("abcdefg")
+        supposition_string = models.AnswerStringEnglish("hijklmno")
+        try:
+            res = answer_string.CheckString(supposition_string)
+        except Exception as e:
+            self.assertEqual('Each string is not the same size.', e.__str__())
+
