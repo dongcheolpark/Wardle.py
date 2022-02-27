@@ -11,9 +11,10 @@ class Wordle:
     def get_answerString(self):
         return self.answer_String
 
-    def checkString(self,string):
-        self.answer_String.CheckString(string)
+    def checkString(self, string):
+        res = self.answer_String.CheckString(string)
         self.turn -= 1
+        return res
 
     def getTurn(self):
         return self.turn

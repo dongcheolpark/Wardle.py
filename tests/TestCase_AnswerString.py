@@ -32,6 +32,7 @@ class TestCaseAnswerString(unittest.TestCase):
         supposition_string = models.AnswerStringEnglish("hijklmn")
         res = answer_string.CheckString(supposition_string)
         self.assertListEqual(res, [0, 0, 0, 0, 0, 0, 0])
+
     def test_AnswerStringSizeIsDifferent(self):
         answer_string = models.AnswerStringEnglish("abcdefg")
         supposition_string = models.AnswerStringEnglish("hijklmno")
