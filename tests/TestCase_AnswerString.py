@@ -41,3 +41,9 @@ class TestCaseAnswerString(unittest.TestCase):
         except Exception as e:
             self.assertEqual('Each string is not the same size.', e.__str__())
 
+
+class TestCaseAnswerStringFactory(unittest.TestCase):
+
+    def test_AnswerStringGetOriginal(self):
+        res = models.AnswerStringFactory().getString('original','roast')
+        self.assertEqual('roast', res.toString())

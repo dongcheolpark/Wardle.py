@@ -3,7 +3,6 @@ from abc import abstractmethod
 
 # <answerString>
 class AnswerString:
-
     size = 0
 
     def __init__(self):
@@ -55,4 +54,16 @@ class AnswerStringEnglish(AnswerString):
             res += i
         return res
 
+
 # </answerString>
+# <answerStringFactory>
+
+
+class AnswerStringFactory:
+
+    def __int__(self):
+        return
+
+    def getString(self, type, string):
+        if type == 'original':
+            return AnswerStringEnglish(string)
