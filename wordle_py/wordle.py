@@ -1,13 +1,18 @@
+import os
+
 from wordle_py.models import *
 import random
+import csv
 
 
 class Wordle:
 
     turn = 0
+    AnswerList = []
 
-    def __init__(self):
+    def __init__(self, string):
         self.answer_String = AnswerString()
+        self.AnswerListSource = string
 
     def get_answerString(self):
         return self.answer_String
@@ -19,29 +24,26 @@ class Wordle:
 
     def getTurn(self):
         return self.turn
-    @abstractmethod
-    def setAnswer(self, string):
-        return
 
-    @abstractmethod
-    def setAnswer(self):
-        return
+    def setAnswer(self, type, string=None, ):
+        if string:
+            self.answer_String = AnswerStringFactory().getString(type, string)
+        else:
+            f = open(self.AnswerListSource, 'r', encoding='utf-8')
+            rdr = csv.reader(f)
+            for line in rdr:
+                self.AnswerList.append(line)
+            f.close()
+            size = len(self.AnswerList)
+            self.answer_String = AnswerStringFactory().getString(type, self.AnswerList[random.randrange(0, size-1)])
 
 
 class WordleOriginal(Wordle):
 
-    AnswerList = [
-        "roast",
-        "aaron",
-    ]
-
     def __init__(self):
+        super().__init__('./wordle_py/AnswerLists/AnswerListOriginal.csv');
         self.answer_String = AnswerStringEnglish()
         self.turn = 6
 
     def setAnswer(self, string=None):
-        if string:
-            self.answer_String = AnswerStringEnglish(string)
-        else:
-            size = len(self.AnswerList)
-            self.answer_String = AnswerStringEnglish(self.AnswerList[random.randrange(0, size-1)])
+        super(WordleOriginal, self).setAnswer('original', string)
