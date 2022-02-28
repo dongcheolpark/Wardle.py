@@ -23,4 +23,12 @@ class TestCaseWordle(unittest.TestCase):
         answer = md.AnswerStringEnglish('roast')
         self.assertListEqual([2, 2, 2, 2, 2], self.wordle.checkString(answer))
 
+    def test_CheckString2(self):
+        self.wordle = wd.wordle.WordleOriginal()
+        self.wordle.setAnswer("roast")
+        answer = md.AnswerStringEnglish('bigstring')
+        try:
+            self.assertListEqual([2, 2, 2, 2, 2], self.wordle.checkString(answer))
+        except Exception as e:
+            self.assertEqual('Each string is not the same size.', e.__str__())
 
