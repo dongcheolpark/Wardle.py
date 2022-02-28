@@ -38,3 +38,10 @@ class TestCaseWordle(unittest.TestCase):
         except Exception as e:
             self.assertEqual('Each string is not the same size.', e.__str__())
 
+    def test_CheckStringInAnswerList(self):
+        wordle = wd.wordle.WordleOriginal()
+        wordle.setAnswer("roast")
+        answer = md.AnswerStringEnglish('rando') # List에 없는 단어
+        self.assertEqual(False, wordle.checkString(answer, inDictionary=true))
+
+
