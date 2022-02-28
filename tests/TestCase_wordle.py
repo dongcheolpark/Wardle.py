@@ -42,6 +42,6 @@ class TestCaseWordle(unittest.TestCase):
         wordle = wd.wordle.WordleOriginal()
         wordle.setAnswer("roast")
         answer = md.AnswerStringEnglish('rando') # List에 없는 단어
-        self.assertEqual(False, wordle.checkString(answer, inDictionary=True))
+        self.assertEqual(False, wordle.checkString(answer, isDictionary=True))
 
 

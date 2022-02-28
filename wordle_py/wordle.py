@@ -17,7 +17,14 @@ class Wordle:
     def get_answerString(self):
         return self.answer_String
 
-    def checkString(self, string):
+    def checkString(self, string, isDictionary=False):
+        if isDictionary:
+            check = False
+            for item in self.AnswerList:
+                if string.toString() == item:
+                    check = True
+            if not check:
+                return False
         res = self.answer_String.CheckString(string)
         self.turn -= 1
         return res
