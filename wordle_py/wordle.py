@@ -14,6 +14,12 @@ class Wordle:
         self.answer_String = AnswerString()
         self.AnswerListSource = string
 
+        f = open(self.AnswerListSource, 'r', encoding='utf-8')
+        rdr = csv.reader(f)
+        for line in rdr:
+            self.AnswerList.append(line[0])
+        f.close()
+
     def get_answerString(self):
         return self.answer_String
 
@@ -36,11 +42,6 @@ class Wordle:
         if string:
             self.answer_String = AnswerStringFactory().getString(type, string)
         else:
-            f = open(self.AnswerListSource, 'r', encoding='utf-8')
-            rdr = csv.reader(f)
-            for line in rdr:
-                self.AnswerList.append(line)
-            f.close()
             size = len(self.AnswerList)
             self.answer_String = AnswerStringFactory().getString(type, self.AnswerList[random.randrange(0, size-1)])
 

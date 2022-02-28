@@ -43,5 +43,7 @@ class TestCaseWordle(unittest.TestCase):
         wordle.setAnswer("roast")
         answer = md.AnswerStringEnglish('rando') # List에 없는 단어
         self.assertEqual(False, wordle.checkString(answer, isDictionary=True))
+        answer = md.AnswerStringEnglish('start') # List에 없는 단어
+        self.assertNotEqual(False, wordle.checkString(answer, isDictionary=True))
 
 
