@@ -41,7 +41,7 @@ class Wordle:
 class WordleOriginal(Wordle):
 
     def __init__(self):
-        super().__init__('./wordle_py/AnswerLists/AnswerListOriginal.csv');
+        super().__init__(os.path.dirname(__file__)+'/AnswerLists/AnswerListOriginal.csv');
         self.answer_String = AnswerStringEnglish()
         self.turn = 6
 
