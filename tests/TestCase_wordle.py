@@ -7,28 +7,34 @@ import wordle_py.models as md
 class TestCaseWordle(unittest.TestCase):
 
     def test_CheckTurn(self):
-        self.wordle = wd.wordle.WordleOriginal()
-        self.wordle.setAnswer("roast")
+        wordle = wd.wordle.WordleOriginal()
+        wordle.setAnswer("roast")
         i = 0
         answer = md.AnswerStringEnglish('hello')
-        while self.wordle.getTurn():
-            self.wordle.checkString(answer)
+        while wordle.getTurn():
+            wordle.checkString(answer)
             i += 1
         self.assertEqual(6, i)
         return
 
+    def test_SetAnswerRandom(self):
+        wordle = wd.wordle.WordleOriginal()
+        wordle.setAnswer()
+        ans = wordle.answer_String
+        self.assertNotEqual([], ans)
+
     def test_CheckString(self):
-        self.wordle = wd.wordle.WordleOriginal()
-        self.wordle.setAnswer("roast")
+        wordle = wd.wordle.WordleOriginal()
+        wordle.setAnswer("roast")
         answer = md.AnswerStringEnglish('roast')
-        self.assertListEqual([2, 2, 2, 2, 2], self.wordle.checkString(answer))
+        self.assertListEqual([2, 2, 2, 2, 2], wordle.checkString(answer))
 
     def test_CheckString2(self):
-        self.wordle = wd.wordle.WordleOriginal()
-        self.wordle.setAnswer("roast")
+        wordle = wd.wordle.WordleOriginal()
+        wordle.setAnswer("roast")
         answer = md.AnswerStringEnglish('bigstring')
         try:
-            self.assertListEqual([2, 2, 2, 2, 2], self.wordle.checkString(answer))
+            self.assertListEqual([2, 2, 2, 2, 2], wordle.checkString(answer))
         except Exception as e:
             self.assertEqual('Each string is not the same size.', e.__str__())
 
