@@ -14,10 +14,23 @@ class Wordle:
         self.answer_String = AnswerString()
         self.AnswerListSource = string
 
+        f = open(self.AnswerListSource, 'r', encoding='utf-8')
+        rdr = csv.reader(f)
+        for line in rdr:
+            self.AnswerList.append(line[0])
+        f.close()
+
     def get_answerString(self):
         return self.answer_String
 
-    def checkString(self, string):
+    def checkString(self, string, isDictionary=False):
+        if isDictionary:
+            check = False
+            for item in self.AnswerList:
+                if string.toString() == item:
+                    check = True
+            if not check:
+                return False
         res = self.answer_String.CheckString(string)
         self.turn -= 1
         return res
@@ -29,11 +42,6 @@ class Wordle:
         if string:
             self.answer_String = AnswerStringFactory().getString(type, string)
         else:
-            f = open(self.AnswerListSource, 'r', encoding='utf-8')
-            rdr = csv.reader(f)
-            for line in rdr:
-                self.AnswerList.append(line)
-            f.close()
             size = len(self.AnswerList)
             self.answer_String = AnswerStringFactory().getString(type, self.AnswerList[random.randrange(0, size-1)])
 

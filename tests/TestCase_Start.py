@@ -9,7 +9,7 @@ class TestCaseStart(unittest.TestCase):
         self.wordleOriginal = wd.wordle.WordleOriginal()
 
     def test_originalClass(self):
-        self.wordleOriginal.setAnswer('reset')
+        self.wordleOriginal.setAnswer('reset')  # 정답 단어 reset으로 정하기
 
     def tearDown(self):
         del self.wordleOriginal
